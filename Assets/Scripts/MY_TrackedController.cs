@@ -24,7 +24,30 @@ public class MY_TrackedController : MonoBehaviour {
 	}
 
 	public void DoTriggerUnclicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoTriggerUnclicked");
+		release ();
+	}
+
+	void grab() {
+		if (grababbleObject == null || joint.connectedBody != null) {
+			return;
+		}
+
+		joint.connectedBody = grababbleObject.GetComponent<Rigidbody> ();
+	}
+
+	void release() {
+		if (joint.connectedBody == null) {
+			return;
+		}
+
+		Rigidbody rigidBody = joint.connectedBody;
+		joint.connectedBody = null;
+
+		var device = SteamVR_Controller.Input((int)trackedController.GetComponent<SteamVR_TrackedObject> ().index);
+		rigidBody.velocity = device.velocity;
+		rigidBody.angularVelocity = device.angularVelocity;
+
+		rigidBody.maxAngularVelocity = rigidBody.angularVelocity.magnitude;
 	}
 
 	void OnTriggerEnter(Collider other) {
