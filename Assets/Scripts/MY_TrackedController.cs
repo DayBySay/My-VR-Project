@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MY_TrackedController : MonoBehaviour {
 	SteamVR_TrackedController trackedController;
+	GameObject grababbleObject;
+	FixedJoint joint;
 
 	void Start () {
 		trackedController = gameObject.GetComponent<SteamVR_TrackedController> ();
@@ -13,10 +15,12 @@ public class MY_TrackedController : MonoBehaviour {
 
 		trackedController.TriggerClicked += new ClickedEventHandler (DoTriggerClicked);
 		trackedController.TriggerUnclicked += new ClickedEventHandler (DoTriggerUnclicked);
+
+		joint = gameObject.GetComponent<FixedJoint> ();
 	}
 
 	public void DoTriggerClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoTriggerClicked");
+		grab ();
 	}
 
 	public void DoTriggerUnclicked(object sender, ClickedEventArgs e) {
@@ -24,6 +28,10 @@ public class MY_TrackedController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Destroy(other.gameObject);
+		grababbleObject = other.gameObject;
+	}
+
+	void OnTriggerExit(Collider other) {
+		grababbleObject = null;
 	}
 }
