@@ -25,46 +25,46 @@ public class MY_TrackedController : MonoBehaviour {
 	}
 
 	public void DoMenuButtonClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoMenuButtonClicked: " + e);
+		Debug.Log ("DoMenuButtonClicked");
 	}
 
 	public void DoMenuButtonUnClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoMenuButtonUnClicked: " + e);
+		Debug.Log ("DoMenuButtonUnClicked");
 	}
 
 	public void DoTriggerClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoTriggerClicked: " + e);
+		Debug.Log ("DoTriggerClicked");
 	}
 
 	public void DoTriggerUnclicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoTriggerUnclicked: " + e);
+		Debug.Log ("DoTriggerUnclicked");
 	}
 
 	public void DoSteamClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoSteamClicked: " + e);
+		Debug.Log ("DoSteamClicked");
 	}
 
 	public void DoPadClicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoPadClicked: " + e);
+		Debug.Log ("DoPadClicked");
 	}
 
 	public void DoPadUnclicked(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoPadUnclicked: " + e);
+		Debug.Log ("DoPadUnclicked");
 	}
 
 	public void DoPadTouched(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoPadTouched: " + e);
+		Debug.Log ("DoPadTouched");
 	}
 
 	public void DoPadUntouched(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoPadUntouched: " + e);
+		Debug.Log ("DoPadUntouched");
 	}
 
 	public void DoGripped(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoGripped: " + e);
+		Debug.Log ("DoGripped");
 	}
 
 	public void DoUngripped(object sender, ClickedEventArgs e) {
-		Debug.Log ("DoUngripped: " + e);
+		Debug.Log ("DoUngripped");
 	}
 }
